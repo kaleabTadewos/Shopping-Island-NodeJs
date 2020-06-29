@@ -1,0 +1,1512 @@
+{
+	"info": {
+		"_postman_id": "c7c1501a-3d44-4386-b0c0-e6d18f8bb1f5",
+		"name": "MWA-ShoppingIsland",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1.category",
+			"item": [
+				{
+					"name": "1. create category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Electronicssss\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/admin/categories/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admin",
+								"categories",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "1. get category by Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n            \"name\": \"Electronicss\"\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/admin/categories/5ee6a66eaac52f3ef4dc4310",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admin",
+								"categories",
+								"5ee6a66eaac52f3ef4dc4310"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "1. get categories",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n            \"name\": \"Electronicss\"\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/admin/categories/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admin",
+								"categories",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "1. update category",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"_id\": \"5ee6a66eaac52f3ef4dc4310\",\n    \"name\": \"Electronicss12\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/admin/categories/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admin",
+								"categories",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "1. delete category",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n            \"name\": \"Electronicss\"\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/admin/categories/5ee6f57e2f358a3c8487ad2e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admin",
+								"categories",
+								"5ee6f57e2f358a3c8487ad2e"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "2.subcategory",
+			"item": [
+				{
+					"name": "1. get subcategory",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"NewSubCatogry-2\",\r\n    \"categoryId\": \"5ee6a66eaac52f3ef4dc4310\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/admin/sub-categories/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admin",
+								"sub-categories",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "1. create subcategory",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"NewSubCatogry-6\",\r\n    \"categoryId\": \"5ee9193c5edacd33a4c0e759\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/admin/sub-categories/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admin",
+								"sub-categories",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "1. update subcategory",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"5ee7e26f1b2e862b9c896ad6\",\r\n    \"name\": \"NewSubCatogry-10\",\r\n    \"categoryId\": \"5ee6a66eaac52f3ef4dc4310\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/admin/sub-categories/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admin",
+								"sub-categories",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "1. get subcategory by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"5ee7e26f1b2e862b9c896ad6\",\r\n    \"name\": \"NewSubCatogry-3\",\r\n    \"categoryId\": \"5ee6a66eaac52f3ef4dc4310\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/admin/sub-categories/5ee7e26f1b2e862b9c896ad6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admin",
+								"sub-categories",
+								"5ee7e26f1b2e862b9c896ad6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "1. delete subcategory",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"5ee7e26f1b2e862b9c896ad6\",\r\n    \"name\": \"NewSubCatogry-3\",\r\n    \"categoryId\": \"5ee6a66eaac52f3ef4dc4310\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/admin/sub-categories/5ee7f06ccdd5eb0e3ca0e9b4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admin",
+								"sub-categories",
+								"5ee7f06ccdd5eb0e3ca0e9b4"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "3.unit",
+			"item": [
+				{
+					"name": "get units",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"piece\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/admin/units/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admin",
+								"units",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create unit",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"dozen\" , \r\n    \"quantity\" : 12\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/admin/units/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admin",
+								"units",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get units by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"piece\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/admin/units/5ee7f2e5e219ec29ccaffb6c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admin",
+								"units",
+								"5ee7f2e5e219ec29ccaffb6c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update unit",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"5ee7f2eee219ec29ccaffb6d\",\r\n    \"name\": \"dozen\" , \r\n    \"quantity\" : 12\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/admin/units/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admin",
+								"units",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete unit",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"piece\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/admin/units/5ee7f2e5e219ec29ccaffb6c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admin",
+								"units",
+								"5ee7f2e5e219ec29ccaffb6c"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "4.Product",
+			"item": [
+				{
+					"name": "get products",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Anker Soundcore\",\r\n    \"userId\": \"5ee8029163abd363779e7a09\",\r\n    \"description\": \"Anker Soundcore 2 Portable Bluetooth Speaker with 12W Stereo Sound\",\r\n    \"imageUrl\": \"https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/admin/products/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admin",
+								"products",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Anker Soundcore 1\",\r\n    \"userId\": \"5ee9906c51c8f942582bac05\",\r\n    \"description\": \"Anker Soundcore 2 Portable Bluetooth Speaker with 12W Stereo Sound\",\r\n    \"imageUrl\": \"https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg\" ,\r\n    \"subCategoryId\": \"5ee7e7b33dbd1003dc338256\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/admin/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admin",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update product",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"5ee83fb17e12ea22b87b7d46\",\r\n    \"name\": \"Anker Soundcore2\",\r\n    \"userId\": \"5ee8029163abd363779e7a09\",\r\n    \"description\": \"Anker Soundcore 2 Portable Bluetooth Speaker with 12W Stereo Sound\",\r\n    \"imageUrl\": \"https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg\" ,\r\n    \"subCategoryId\": \"5ee7e26f1b2e862b9c896ad6\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/admin/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admin",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete products",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Anker Soundcore\",\r\n    \"userId\": \"5ee8029163abd363779e7a09\",\r\n    \"description\": \"Anker Soundcore 2 Portable Bluetooth Speaker with 12W Stereo Sound\",\r\n    \"imageUrl\": \"https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/admin/products/5ee878032f953807d87279f4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admin",
+								"products",
+								"5ee878032f953807d87279f4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get products by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Anker Soundcore\",\r\n    \"userId\": \"5ee8029163abd363779e7a09\",\r\n    \"description\": \"Anker Soundcore 2 Portable Bluetooth Speaker with 12W Stereo Sound\",\r\n    \"imageUrl\": \"https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/admin/products/5ee83fb17e12ea22b87b7d46",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admin",
+								"products",
+								"5ee83fb17e12ea22b87b7d46"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get product by seller id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/admin/products/seller/5ee9906c51c8f942582bac05",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admin",
+								"products",
+								"seller",
+								"5ee9906c51c8f942582bac05"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "5.address",
+			"item": [
+				{
+					"name": "get address",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Anker Soundcore\",\r\n    \"userId\": \"5ee8029163abd363779e7a09\",\r\n    \"description\": \"Anker Soundcore 2 Portable Bluetooth Speaker with 12W Stereo Sound\",\r\n    \"imageUrl\": \"https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/admin/address/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admin",
+								"address",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create address",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"state\": \"Iowa\",\r\n    \"city\": \"FairField\",\r\n    \"street\": \"1000 N 4th.\",\r\n    \"zipCode\": \"52556\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/admin/address/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admin",
+								"address",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get address by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Anker Soundcore\",\r\n    \"userId\": \"5ee8029163abd363779e7a09\",\r\n    \"description\": \"Anker Soundcore 2 Portable Bluetooth Speaker with 12W Stereo Sound\",\r\n    \"imageUrl\": \"https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/admin/address/5ee852bd7344e21de8f08e60",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admin",
+								"address",
+								"5ee852bd7344e21de8f08e60"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update address",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"5ee852bd7344e21de8f08e60\",\r\n    \"state\": \"Iowa\",\r\n    \"city\": \"FairField\",\r\n    \"street\": \"1000 N 4th.\",\r\n    \"zipCode\": \"52557\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/admin/address/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admin",
+								"address",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete address",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Anker Soundcore\",\r\n    \"userId\": \"5ee8029163abd363779e7a09\",\r\n    \"description\": \"Anker Soundcore 2 Portable Bluetooth Speaker with 12W Stereo Sound\",\r\n    \"imageUrl\": \"https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/admin/address/5ee852bd7344e21de8f08e60",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admin",
+								"address",
+								"5ee852bd7344e21de8f08e60"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "6.item",
+			"item": [
+				{
+					"name": "get all items",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/admin/items/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admin",
+								"items",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create item",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productId\": \"5eea333f76ac9d27c04ff8aa\" , \r\n    \"unitId\": \"5ee7f2eee219ec29ccaffb6d\" , \r\n    \"price\": 45 , \r\n    \"stockQuantity\": 20\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/admin/items/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admin",
+								"items",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get item by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/admin/items/5eea33bd76ac9d27c04ff8ac",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admin",
+								"items",
+								"5eea33bd76ac9d27c04ff8ac"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update item",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"5ee86d91e1d1b52e0c7fb10b\" ,\r\n    \"price\": 45 , \r\n    \"stockQuantity\": 30\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/admin/items/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admin",
+								"items",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete item",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/admin/items/5ee8782b2f953807d87279f5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admin",
+								"items",
+								"5ee8782b2f953807d87279f5"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "7.user",
+			"item": [
+				{
+					"name": "user add to cart",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"itemId\": \"5eea33bd76ac9d27c04ff8ac\",\r\n\"userId\": \"5eeac7b95ac0d41ec06778ec\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/admin/users/addCart",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admin",
+								"users",
+								"addCart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get users",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/admin/users/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admin",
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get user by Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/admin/users/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admin",
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"email\": \"kal4@gmail.com\",\r\n\t\"password\": \"alemu\",\r\n    \"role\": \"ADMIN\",\r\n    \"firstName\": \"Ashenafi\",\r\n    \"lastName\": \"Gemechu\",\r\n    \"state\": \"Iowa\",\r\n    \"city\": \"Fairfield\",\r\n    \"street\": \"1000 N 4th St.\",\r\n    \"zipCode\": \"52557\",\r\n    \"phoneNumber\": \"3333333333\",\r\n    \"accountNumber\": \"3333333333\",\r\n    \"expiryDate\": \"3333333333\",\r\n    \"nameOntheCard\": \"Ashenafi A. Gemechu\",\r\n    \"ccv\": \"333\",\r\n    \"addressId\": \"5eea345d76ac9d27c04ff8ae\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/admin/users/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admin",
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete user",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/admin/users/5eeaa61565e84f0220a760da",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admin",
+								"users",
+								"5eeaa61565e84f0220a760da"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update user",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"_id\": \"5eeac7b95ac0d41ec06778ec\",\r\n    \"email\": \"kaleab@gmail.com\",\r\n\t\"password\": \"alemu\",\r\n    \"role\": \"ADMIN\",\r\n    \"firstName\": \"Ashenafi\",\r\n    \"lastName\": \"Alemu\",\r\n    \"state\": \"Iowa\",\r\n    \"city\": \"Fairfield\",\r\n    \"street\": \"1000 N 4th St.\",\r\n    \"zipCode\": \"52557\",\r\n    \"phoneNumber\": \"3333333333\",\r\n    \"accountNumber\": \"3333333333\",\r\n    \"expiryDate\": \"3333333333\",\r\n    \"nameOntheCard\": \"Ashenafi A. Gemechu\",\r\n    \"ccv\": \"333\" ,\r\n    \"addressId\": \"5eea345d76ac9d27c04ff8ae\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/admin/users/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admin",
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user place order",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"itemIds\": [\"5eea33bd76ac9d27c04ff8ac\"],\r\n     \"userId\": \"5eea388b64ba39271088e9ae\" ,\r\n     \"addressId\": \"5eea345d76ac9d27c04ff8ae\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/admin/users/placeOrder",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admin",
+								"users",
+								"placeOrder"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user place single order",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"itemId\": \"5eea33bd76ac9d27c04ff8ac\",\r\n     \"userId\": \"5eeac7b95ac0d41ec06778ec\" ,\r\n     \"addressId\": \"5eea345d76ac9d27c04ff8ae\" ,\r\n     \"shoppingCartId\": \"5eeac86dfb1b4a27c4fe2844\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/admin/users/placeSingleOrder",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admin",
+								"users",
+								"placeSingleOrder"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user remove from cart",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"shoppingCartId\": \"5eea7be845cf001e2c12f131\",\r\n\"userId\": \"5eea7bd245cf001e2c12f130\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/admin/users/removeCart",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admin",
+								"users",
+								"removeCart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get user shopping carts",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"itemId\": \"5ee979e3bb6923095c812f02\",\r\n\"userId\": \"5ee96072dae5b439bcec8fff\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/admin/users/shoppingCarts/5eea7bd245cf001e2c12f130",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admin",
+								"users",
+								"shoppingCarts",
+								"5eea7bd245cf001e2c12f130"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get users orders",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/admin/users/orders/5eeac7b95ac0d41ec06778ec",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admin",
+								"users",
+								"orders",
+								"5eeac7b95ac0d41ec06778ec"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get seller orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/admin/users/sellerOrders/5ee9906c51c8f942582bac05",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admin",
+								"users",
+								"sellerOrders",
+								"5ee9906c51c8f942582bac05"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update order status",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"orderId\": \"5eead29ea843eb4124942ec1\",\r\n     \"userId\": \"5eeac7b95ac0d41ec06778ec\" ,\r\n     \"orderStatus\": \"CANCELLED\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/admin/users/updateOrderStatus",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admin",
+								"users",
+								"updateOrderStatus"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "8.security",
+			"item": [
+				{
+					"name": "create user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"email\": \"test7@gmail.com\",\r\n\t\"password\": \"alemu\",\r\n    \"role\": \"ADMIN\",\r\n    \"status\": \"PENDING\",\r\n    \"firstName\": \"Ashenafi\",\r\n    \"lastName\": \"Gemechu\",\r\n    \"state\": \"Iowa\",\r\n    \"city\": \"Fairfield\",\r\n    \"street\": \"1000 N 4th St.\",\r\n    \"zipCode\": \"52557\",\r\n    \"phoneNumber\": \"3333333333\",\r\n    \"accountNumber\": \"3333333333\",\r\n    \"expiryDate\": \"3333333333\",\r\n    \"nameOntheCard\": \"Ashenafi A. Gemechu\",\r\n    \"ccv\": \"333\",\r\n    \"addressId\": \"5ee9a71e44336b24605b542d\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/admin/register/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admin",
+								"register",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"test1@gmail.com\",\r\n\t\"password\": \"alemu\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "product review",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productId\":\"5ee991af51c8f942582bac06\",\r\n    \"userId\":\"5ee8029163abd363779e7a09\",\r\n    \"text\": \"bla bla bla bla and bla\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/admin/products/review",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"admin",
+								"products",
+								"review"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update review status",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productId\":\"5ee991af51c8f942582bac06\",\r\n    \"reviewId\":\"5eeafe454ff0a22a440e18ea\",\r\n    \"reviewStatus\": \"APPROVED\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/admin/products/reviewStatus",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"admin",
+								"products",
+								"reviewStatus"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
