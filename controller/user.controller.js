@@ -246,6 +246,7 @@ exports.updateOrderStatus = async (req, res, next) => {
                 })
                 .run();
 
+                
         res.status(200).send(new ApiResponse(200, 'success', newOrder));
     }
     else {
