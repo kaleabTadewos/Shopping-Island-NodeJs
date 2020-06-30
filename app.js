@@ -19,6 +19,7 @@ const allRoles = require('./middleware/allRoles');
 const auth = require('./middleware/auth');
 const config = require('config');
 const app = express();
+const helmet = require('helmet');
 
 if (!config.get('jwtPrivateKey')) {
     console.log(config.get('jwtPrivateKey'))
@@ -26,7 +27,8 @@ if (!config.get('jwtPrivateKey')) {
     process.exit(1);
 }
 
-app.use(express.json())
+app.use(express.json());
+app.use(helmet());
 app.use(cors());
 app.use(bodyParser.json());
 //app.use('/user', [auth, admin], userRoutes);
