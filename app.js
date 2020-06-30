@@ -7,6 +7,7 @@ const cors = require('cors');
 const ApiResponse = require('./models/apiResponse');
 const ErrorResponse = require('./models/errorResponse');
 const adminRoutes = require('./routes/admin.route');
+const logger = require('./util/logger');
 
 const userRoutes = require('./routes/user.route');
 const loginRoutes = require('./routes/login.route');
@@ -51,10 +52,12 @@ app.get('/', (req, res, next) => {
 });
 
 app.use((req, res, next) => {
+    logger.logInfo(`no content found! for url ${req.url}`);
     return res.status(404).send(new ErrorResponse(400, 'no content found!'));
 });
 
 app.use((err, req, res, next) => {
+    logger.logError(err.message);
     return res.status(500).send(new ErrorResponse(500, err));
 });
 
