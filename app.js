@@ -1,4 +1,5 @@
 require('express-async-errors');
+const {port , environment} = require('./config.js')
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
@@ -20,6 +21,7 @@ const auth = require('./middleware/auth');
 const config = require('config');
 const app = express();
 const helmet = require('helmet');
+const morgan = require('morgan');
 
 if (!config.get('jwtPrivateKey')) {
     console.log(config.get('jwtPrivateKey'))
@@ -31,6 +33,9 @@ app.use(express.json());
 app.use(helmet());
 app.use(cors());
 app.use(bodyParser.json());
+if(environment == 'development'){
+    app.use(morgan('tiny'));
+}
 //app.use('/user', [auth, admin], userRoutes);
 app.use('/users', userRoutes);
 //app.use(loginRoutes);
@@ -55,7 +60,7 @@ app.use((err, req, res, next) => {
 
 mongoose.connect('mongodb://localhost:27017/Island-shopping', { useUnifiedTopology: true, useNewUrlParser: true })
     .then(() => {
-        app.listen(3000, () => {
+        app.listen(port, () => {
             console.log("server is running on 3000 ...");
         })
     }).catch((err) => console.log(err));
