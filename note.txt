@@ -1,0 +1,5 @@
+Handle error for async functions : 
+ - install express-async-errors. 
+ - import it on application entry like : "require('express-async-errors');"
+ - then after this whenever , there is an error rise from asynchronous function then this will 
+   throw an exception , which then handled by error handler route.
