@@ -33,6 +33,7 @@ app.use(express.json());
 app.use(helmet());
 app.use(cors());
 app.use(bodyParser.json());
+//morgan configuration
 if(environment == 'development'){
     app.use(morgan('tiny'));
 }

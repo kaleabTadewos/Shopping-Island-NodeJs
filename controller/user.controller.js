@@ -10,6 +10,8 @@ const { OrderDetail } = require('../models/orderDetail');
 const { Item } = require('../models/item');
 const ApiResponse = require('../models/apiResponse');
 const ErrorResponse = require('../models/errorResponse');
+const Fawn = require('fawn');
+Fawn.init(mongoose);
 const {
     validateId,
     validateWithOutId,
@@ -22,6 +24,7 @@ const {
     validateUpdateOrderStatus
 } = require('../models/request/user.request');
 const config = require('config');
+const { orderBy } = require('lodash');
 
 
 exports.insert = async(req, res, next) => {
@@ -195,13 +198,22 @@ exports.updateOrderStatus = async (req, res, next) => {
             newOrder.orderStatus = "CANCELLED";
             newOrder.payment = "VOID"
 
-            await User.findByIdAndUpdate(orderedBy._id, {
-                $pull: { order: { _id: req.body.orderId } },
-            }, { new: true, useFindAndModify: true });
+            // await User.findByIdAndUpdate(orderedBy._id, {
+            //     $pull: { order: { _id: req.body.orderId } },
+            // }, { new: true, useFindAndModify: true });
 
-            const updateUser = await User.findByIdAndUpdate(orderedBy._id, {
-                $push: { order: newOrder }
-            }, { new: true, useFindAndModify: true });
+            // const updateUser = await User.findByIdAndUpdate(orderedBy._id, {
+            //     $push: { order: newOrder }
+            // }, { new: true, useFindAndModify: true });
+
+            new Fawn.Task()
+                .update('users' , {_id: orderBy._id} , {
+                    $pull: { order: { _id: req.body.orderId } }
+                })
+                .update('users' , {_id: orderBy._id} , {
+                    $push: { order: newOrder }
+                })
+                .run();
 
             res.status(200).send(new ApiResponse(200, 'success', newOrder));
         }
@@ -218,13 +230,21 @@ exports.updateOrderStatus = async (req, res, next) => {
             orderedBy.save();
         }
 
-        await User.findByIdAndUpdate(orderedBy._id, {
-            $pull: { order: { _id: req.body.orderId } },
-        }, { new: true, useFindAndModify: true });
+        // await User.findByIdAndUpdate(orderedBy._id, {
+        //     $pull: { order: { _id: req.body.orderId } },
+        // }, { new: true, useFindAndModify: true });
 
-        const updateUser = await User.findByIdAndUpdate(orderedBy._id, {
-            $push: { order: newOrder }
-        }, { new: true, useFindAndModify: true });
+        // const updateUser = await User.findByIdAndUpdate(orderedBy._id, {
+        //     $push: { order: newOrder }
+        // }, { new: true, useFindAndModify: true });
+        new Fawn.Task()
+                .update('users' , {_id: orderedBy._id} , {
+                    $pull: { order: { _id: req.body.orderId } }
+                })
+                .update('users' , {_id: orderedBy._id} , {
+                    $push: { order: newOrder }
+                })
+                .run();
 
         res.status(200).send(new ApiResponse(200, 'success', newOrder));
     }
