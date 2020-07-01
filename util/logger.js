@@ -1,5 +1,6 @@
 const winston = require('winston');
 require('winston-mongodb');
+const {connectionString} = require('../config');
 const logger = winston.createLogger({
     level: 'info',
     format: winston.format.json(),
@@ -13,7 +14,7 @@ const logger = winston.createLogger({
       new winston.transports.File({ filename: 'combined.log' }),
      // new winston.transports.Console({ format: winston.format.simple() }),
       new winston.transports.MongoDB({
-        db: 'mongodb://localhost:27017/Island-shopping' ,
+        db: connectionString ,
         level: 'info'
       })
     ],

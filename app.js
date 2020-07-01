@@ -1,8 +1,9 @@
 require('express-async-errors');
+require('./util/database')();
 const {port , environment} = require('./config.js')
+const config = require('config');
 const express = require('express');
 const bodyParser = require('body-parser');
-const mongoose = require('mongoose');
 const cors = require('cors');
 const ApiResponse = require('./models/apiResponse');
 const ErrorResponse = require('./models/errorResponse');
@@ -19,7 +20,6 @@ const adminSeller = require('./middleware/admin-seller');
 const adminOnly = require('./middleware/adminOnly');
 const allRoles = require('./middleware/allRoles');
 const auth = require('./middleware/auth');
-const config = require('config');
 const app = express();
 const helmet = require('helmet');
 const morgan = require('morgan');
@@ -68,10 +68,6 @@ app.use((err, req, res, next) => {
     return res.status(500).send(new ErrorResponse(500, err));
 });
 
-
-mongoose.connect('mongodb://localhost:27017/Island-shopping', { useUnifiedTopology: true, useNewUrlParser: true })
-    .then(() => {
-        app.listen(port, () => {
-            console.log("server is running on 3000 ...");
-        })
-    }).catch((err) => console.log(err));
+app.listen(port, () => {
+    console.log('server is running on 3000 ...');
+});

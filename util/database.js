@@ -1,26 +1,10 @@
-const MongoClient = require('mongodb').MongoClient;
+const mongoose = require('mongoose');
+const logger = require('./logger');
+const {connectionString} = require('../config');
 
-let _db; 
-
-const mongoConnect = function(callback) {
-    MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true })
-        .then(client => {
-            _db = client.db('shopping-island');
-            callback();
-        })
-        .catch(error => {
-            console.log(err);
-            throw new Error('DB connection failed...');
-        });
+module.exports = function(){
+    mongoose.connect(connectionString, { useUnifiedTopology: true, useNewUrlParser: true })
+    .then(() => {
+        logger.logInfo('mongodb is connected!!!')
+    })
 }
-
-const getDB = () => {
-    if (_db) {
-        return _db;
-    } else {
-        throw new Error('DB connect failed');
-    }
-}
-
-exports.mongoConnect = mongoConnect;
-exports.getDB = getDB;
