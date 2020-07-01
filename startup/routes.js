@@ -4,13 +4,12 @@ const express = require('express');
 const helmet = require('helmet');
 const morgan = require('morgan');
 
-const ApiResponse = require('../models/apiResponse');
 const ErrorResponse = require('../models/errorResponse');
 const {port , environment} = require('../config.js')
 const logger = require('./logger');
+
 //routes
 const userRoutes = require('../routes/user.route');
-const loginRoutes = require('../routes/login.route');
 const adminOnlyRoutes = require('../routes/adminOnly.route');
 const allUsersRoutes = require('../routes/allRoles.route');
 const adminSellerRoutes = require('../routes/admin-seller.route');
