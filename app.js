@@ -48,13 +48,10 @@ app.use(bodyParser.json());
 if(environment == 'development'){
     app.use(morgan('tiny'));
 }
-//app.use('/user', [auth, admin], userRoutes);
 app.use('/users', userRoutes);
-//app.use(loginRoutes);
 app.use('/admin', adminRoutes);
 app.use('/all-users', [auth, allRoles], allUsersRoutes);
 app.use('/admin-seller', [auth, adminSeller], adminSellerRoutes);
-//app.use('/admin-only', [auth, adminOnly], adminOnlyRoutes);
 app.use('/admin-only', [auth, adminOnly], adminOnlyRoutes);
 
 app.get('/', (req, res, next) => {
