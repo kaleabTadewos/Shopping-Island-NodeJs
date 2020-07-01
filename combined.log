@@ -12,3 +12,5 @@
 {"level":"error","message":"Category.finds is not a function","service":"user-service"}
 {"level":"info","message":"Hello distributed log files!","service":"user-service"}
 {"level":"info","message":"no content found! for url /admin/categorie/","service":"user-service"}
+{"level":"error","message":"some thing is broken here outside of express scope!","service":"user-service"}
+{"level":"error","message":"some thing is broken here outside of express scope!","service":"user-service"}
