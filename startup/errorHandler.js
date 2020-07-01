@@ -1,4 +1,6 @@
-const config = require('../config');
+const config = require('config');
+const logger = require('./logger');
+require('express-async-errors');
 
 module.exports = function() {
 
