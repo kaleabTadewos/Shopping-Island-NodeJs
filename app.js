@@ -24,6 +24,16 @@ const app = express();
 const helmet = require('helmet');
 const morgan = require('morgan');
 
+process.on('uncaughtException' , (ex) => {
+    logger.logError(ex.message);
+})
+
+process.on('unhandledRejection' , (ex) => {
+    logger.logError(ex.message);
+})
+
+//throw new Error('some thing is broken here outside of express scope!');
+
 if (!config.get('jwtPrivateKey')) {
     console.log(config.get('jwtPrivateKey'))
     console.error('jwtPrivateKey is not defined')
