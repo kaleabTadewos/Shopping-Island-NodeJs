@@ -1,5 +1,6 @@
 {
     "jwtPrivateKey": "private",
     "dollarPerPoint": 5,
-    "pointPerPerchaseAmount": 0.1
+    "pointPerPerchaseAmount": 0.1 ,
+    "connectionString": "mongodb://localhost:27017/Island-shopping"
 }
