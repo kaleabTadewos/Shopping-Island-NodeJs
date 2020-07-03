@@ -15,6 +15,8 @@ require('./startup/routes')(app);
 // });
 
 const connectionPort = port || 3000;
-app.listen(connectionPort, () => {
+const server = app.listen(connectionPort, () => {
     console.log(`server is running on ${port} ...`);
 });
+
+module.exports = server;

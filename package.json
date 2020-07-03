@@ -7,7 +7,7 @@
     } ,
     "scripts": {
         "start": "nodemon app.js",
-        "test": "jest --watchAll"
+        "test": "jest --watchAll --verbose"
     },
     "dependencies": {
         "bcrypt": "^5.0.0",
