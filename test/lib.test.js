@@ -1,4 +1,5 @@
 const lib =  require('../testDemoFunctions/lib');
+const db = require('../testDemoFunctions/dataAcess');
 
 //Sample Test
 describe('absolute' , () => {
@@ -112,4 +113,23 @@ describe('FizzBuzz' , () => {
         expect(result).toBe('Buzz');
     });
 });
+
+describe('applyDiscount' , () => {
+    it('should multiply totalPrice by 0.9 if points > 10' , () => {
+        //mock function to replace getCustomer inside dataAcess.js reference which is db.
+        db.getCustomer = function(customerId){
+            return {id: customerId , points: 20};
+        } 
+        
+          //prepare sample order that can be passed to the getCustomer
+          const order = {customerId: 1 , totalPrice: 10};
+        
+          const customer = db.getCustomer(order.customerId);
+        
+          if (customer.points > 10) 
+            order.totalPrice *= 0.9; 
+          
+            expect(order.totalPrice).toBe(9);
+    })
+})
 

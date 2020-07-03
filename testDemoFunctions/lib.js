@@ -1,4 +1,4 @@
-//const db = require('./db');
+const db = require('./dataAcess');
 //const mail = require('./mail');
 
 // Testing numbers 
@@ -40,7 +40,7 @@ module.exports.fizzBuzz = function(input){
   
   if(input % 3 === 0)
     return 'Fizz';
-    
+
   if(input % 5 === 0)
     return 'Buzz';
   
@@ -48,12 +48,13 @@ module.exports.fizzBuzz = function(input){
 }
 
 // // Mock functions 
-// module.exports.applyDiscount = function(order) { 
-//   const customer = db.getCustomerSync(order.customerId);
+module.exports.applyDiscount = function(order) { 
+ 
+  const customer = db.getCustomer(order.customerId);
 
-//   if (customer.points > 10) 
-//     order.totalPrice *= 0.9; 
-// }
+  if (customer.points > 10) 
+    order.totalPrice *= 0.9; 
+}
 
 // // Mock functions 
 // module.exports.notifyCustomer = function(order) { 
