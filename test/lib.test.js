@@ -154,3 +154,21 @@ describe('notifyCustomer' , () => {
     })
 })
 
+//Interaction Test : Using mock function from Jest itself
+describe('notifyCustomer' , () => {
+    it('should send email to customer' , () => {
+        const order = {customerId: 1};
+
+        //the task of getcustomer is just to get email.
+        db.getCustomer = jest.fn().mockReturnValue({email: 'a'});
+        //sendEmail is just need to be called
+        db.sendMail = jest.fn();
+
+        lib.notifyCustomer(order);
+        expect(db.sendMail).toHaveBeenCalled();
+        expect(db.sendMail.mock.calls[0][0]).toBe('a');
+        expect(db.sendMail.mock.calls[0][1]).toMatch(/order/);
+
+    })
+})
+
