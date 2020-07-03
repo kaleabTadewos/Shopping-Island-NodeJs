@@ -7,7 +7,7 @@ let server;
 describe('admin/units' , () => {
     beforeEach(() => { server = require('../../app'); })
     afterEach(async () => { 
-        server.close(); 
+        await server.close(); 
         await Unit.collection.remove({});
     });
 

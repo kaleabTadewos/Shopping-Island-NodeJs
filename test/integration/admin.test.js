@@ -7,8 +7,7 @@ let server;
 describe('/admin-only/users' , () => {
   beforeEach(() => { server = require('../../app'); })
   afterEach(async () => { 
-    server.close(); 
-    await User.collection.remove({});
+    await server.close(); 
   });
 
   let token = new User({role : "ADMIN"}).generateAuthToken();
