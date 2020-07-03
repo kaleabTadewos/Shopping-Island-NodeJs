@@ -4,7 +4,7 @@
     "private": true,
     "jest": {
         "testURL": "http://localhost"
-    } ,
+    },
     "scripts": {
         "start": "nodemon app.js",
         "test": "jest --watchAll --verbose"
@@ -34,6 +34,7 @@
         "dotenv": "^8.2.0",
         "jest": "^22.3.0",
         "morgan": "^1.10.0",
-        "nodemon": "^2.0.4"
+        "nodemon": "^2.0.4",
+        "supertest": "^4.0.2"
     }
 }
