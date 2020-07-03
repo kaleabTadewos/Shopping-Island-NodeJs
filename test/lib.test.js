@@ -161,6 +161,10 @@ describe('notifyCustomer' , () => {
 
         //the task of getcustomer is just to get email.
         db.getCustomer = jest.fn().mockReturnValue({email: 'a'});
+        //other to be used 
+        //mockResolvedValue(1) -> to create mock that return a promise resolved to 1
+        //mockRejectedValue(new Error('...')) -> to create a promise rejected and return error.
+
         //sendEmail is just need to be called
         db.sendMail = jest.fn();
 
