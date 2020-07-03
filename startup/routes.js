@@ -42,7 +42,7 @@ module.exports = function(app){
 
     app.use((req, res, next) => {
         logger.logInfo(`no content found! for url ${req.url}`);
-        return res.status(404).send(new ErrorResponse(400, 'no content found!'));
+        return res.status(404).send(new ErrorResponse(404, 'no content found!'));
     });
 
     app.use(error);
