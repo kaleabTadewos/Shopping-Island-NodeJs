@@ -81,3 +81,35 @@ describe('registerUser' , () => {
         expect(result.id).toBeGreaterThan(0);
     });
 });
+
+//Sample Test FizzBuzz : mostly asked on interviews
+//execution paths: 
+    //if input is not number
+    //if input is divided by both 5 and 3
+    //if input is only divisible by 3
+    //if input is only divisible by 5
+    //if input is not divided by 3 and 5 and is a number.
+describe('FizzBuzz' , () => {
+    it('should throw exception for non number input' , () => {
+        const args = [null , '1' , {} , undefined];
+        args.forEach(a => {
+            expect(() => {lib.fizzBuzz(a)}).toThrow();
+        });
+    });
+
+    it('should return FizzBuzz if number is divisible by 3 and 5' , () => {
+        const result = lib.fizzBuzz(15);
+        expect(result).toBe('FizzBuzz');
+    });
+
+    it('should return Fizz if number is only divisible by 3' , () => {
+        const result = lib.fizzBuzz(3);
+        expect(result).toBe('Fizz');
+    });
+
+    it('should return FizzBuzz if number is divisible by 5' , () => {
+        const result = lib.fizzBuzz(5);
+        expect(result).toBe('Buzz');
+    });
+});
+
