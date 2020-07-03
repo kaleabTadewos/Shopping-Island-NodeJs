@@ -114,6 +114,7 @@ describe('FizzBuzz' , () => {
     });
 });
 
+//Sample Test with Mock Function of Function that uses external resource.
 describe('applyDiscount' , () => {
     it('should multiply totalPrice by 0.9 if points > 10' , () => {
         //mock function to replace getCustomer inside dataAcess.js reference which is db.
@@ -130,6 +131,26 @@ describe('applyDiscount' , () => {
             order.totalPrice *= 0.9; 
           
             expect(order.totalPrice).toBe(9);
+    })
+});
+
+//Interaction Test : A test tests if two action work together.
+describe('notifyCustomer' , () => {
+    it('should send email to customer' , () => {
+        db.getCustomer = function(customerId){
+            return {id: customerId , points: 20};
+        } 
+        
+        const order = {customerId: 1};
+        
+        let mailSent = false;
+        db.sendMail = function(){
+            mailSent = true;
+        }
+
+        lib.notifyCustomer(order);
+        expect(mailSent).toBe(true);
+
     })
 })
 

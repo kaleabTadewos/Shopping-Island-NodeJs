@@ -1,5 +1,4 @@
 const db = require('./dataAcess');
-//const mail = require('./mail');
 
 // Testing numbers 
 module.exports.absolute = function(number) {
@@ -57,8 +56,8 @@ module.exports.applyDiscount = function(order) {
 }
 
 // // Mock functions 
-// module.exports.notifyCustomer = function(order) { 
-//   const customer = db.getCustomerSync(order.customerId);
+module.exports.notifyCustomer = function(order) { 
+  const customer = db.getCustomer(order.customerId);
 
-//   mail.send(customer.email, 'Your order was placed successfully.');
-// }
+  db.sendMail(customer.email, 'Your order was placed successfully.');
+}
