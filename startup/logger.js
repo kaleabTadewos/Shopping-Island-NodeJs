@@ -1,6 +1,8 @@
 const winston = require('winston');
 require('winston-mongodb');
-const {connectionString} = require('../config');
+//const {connectionString} = require('../config');
+const config = require('config');
+
 const logger = winston.createLogger({
     level: 'info',
     format: winston.format.json(),
@@ -14,7 +16,7 @@ const logger = winston.createLogger({
       new winston.transports.File({ filename: 'combined.log' }),
       new winston.transports.Console({ colorize: true , prettyPrint: true }),
       new winston.transports.MongoDB({
-        db: connectionString ,
+        db: config.get('connectionString') ,
         level: 'info'
       })
     ],
