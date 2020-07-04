@@ -6,8 +6,8 @@
         "testURL": "http://localhost"
     },
     "scripts": {
-        "start": "nodemon app.js",
-        "test": "jest --runInBand --watchAll --verbose"
+        "start": "nodemon server.js",
+        "test": "jest --runInBand --watchAll --verbose --coverage"
     },
     "dependencies": {
         "bcrypt": "^5.0.0",
