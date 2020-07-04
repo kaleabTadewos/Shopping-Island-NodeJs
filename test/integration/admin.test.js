@@ -1,28 +1,41 @@
 const request = require('supertest');
 const {User} = require('../../models/user');
 const mongoose = require('mongoose');
+const server = require('../../app');
 
-let server;
+let token;
+describe('/admin-only/users', () => {
+  
+  beforeEach(async () => { 
+    token = new User({role : "ADMIN"}).generateAuthToken();
+  })
 
-describe('/admin-only/users' , () => {
-  beforeEach(() => { server = require('../../app'); })
   afterEach(async () => { 
-    await server.close(); 
   });
 
-  let token = new User({role : "ADMIN"}).generateAuthToken();
+  const exec = () => {
+    return request(server)
+      .get('/admin-only/users')
+      .set('x-auth-token', token)
+  }
 
-    describe('GET / ' , () => {
-      it('should return all users if token is provided' , async () => {
-        const res = await request(server)
-                      .get('/admin-only/users')
-                      .set('x-auth-token', token)
-        expect(res.status).toBe(200);
-      })
-      it('should return 401 if the request does not have token' , async () => {
-        const res = await request(server)
-                      .get('/admin-only/users');
-        expect(res.status).toBe(401);
-      })
-    })
-}) 
+  describe('GET / ' , () => {
+    it('should return 401 if no token is provided', async () => {
+      token = ''; 
+      const res = await exec();
+      expect(res.status).toBe(401);
+    });
+  
+    it('should return 400 if token is invalid', async () => {
+      token = 'a'; 
+  
+      const res = await exec();
+      expect(res.status).toBe(400);
+    });
+  
+    it('should return 200 if token is valid', async () => {
+      const res = await exec();
+      expect(res.status).toBe(200);
+    });
+  })
+});
