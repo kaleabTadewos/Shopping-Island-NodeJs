@@ -76,7 +76,6 @@ exports.findById = async(req, res, next) => {
 };
 
 exports.findAll = async(req, res, next) => {
-    console.log(req.user);
     const user = await User.find();
     if (!user) return res.status(404).send(new ErrorResponse('400', 'no content found!'));
     res.status(200).send(new ApiResponse(200, 'success', user));

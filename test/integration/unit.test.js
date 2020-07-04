@@ -1,13 +1,10 @@
 const request = require('supertest');
 const {Unit} = require('../../models/unit');
 const mongoose = require('mongoose');
-
-let server;
+const server = require('../../app');
 
 describe('admin/units' , () => {
-    beforeEach(() => { server = require('../../app'); })
     afterEach(async () => { 
-        await server.close(); 
         await Unit.collection.remove({});
     });
 
@@ -69,7 +66,7 @@ describe('admin/units' , () => {
             res = await request(server)
                         .post('/admin/units')
                         .send(input);
-            expect(result).toBe(400);
+            expect(res.status).toBe(400);
           })
         });
       });
