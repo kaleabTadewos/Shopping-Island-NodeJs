@@ -28,3 +28,11 @@ SCENARIO TO CONSIDER
                    - then import server to superset without listening to it.
                    - inside package.json , configure jest to run in "--runInBand" mode
                    - no need to close the server. 
+
+To Create a user for this application
+=======================================
+- disable authentication and create an admin user using admin-only/register
+     => will create a user with encrypted password -> save it with your mind
+- then enable authentication.
+- login with this user
+- and create other user to be used.
