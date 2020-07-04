@@ -3,3 +3,28 @@ Handle error for async functions :
  - import it on application entry like : "require('express-async-errors');"
  - then after this whenever , there is an error rise from asynchronous function then this will 
    throw an exception , which then handled by error handler route.
+
+TESTING
+===========================
+- here is how test done. 
+  ++ for simple function that don't require external resource just use unit testing.
+  ++ for simple function that require external resources 
+     ++ one way : use mock functions and write unit test
+     ++ proper way : use integration testing.
+  ++ Integration Testing 
+     -- Testing methods that use external resources
+     -- Testing endpoints that require token
+           ++ here you just need to make sure is token is available or not , no worry about validity of token , it will check on authentication middle ware testing.
+           ++ testing authorization middle ware.
+
+SCENARIO TO CONSIDER 
+====================
+ - to call http server => need to install "supertest" package.
+ - then import app from app.js file and use it to create server. 
+ - use this server to make http request for testing purpose.
+    - but the server needs to be close after each test cases.
+
+    - Better way : separate create a separate file to listen to port.
+                   - then import server to superset without listening to it.
+                   - inside package.json , configure jest to run in "--runInBand" mode
+                   - no need to close the server. 
